@@ -4,23 +4,23 @@ Submitted by: Landin Kasti
 
 This web app: Discover Dogs
 
-Time spent: **X** hours spent in total
+Time spent: 2.5 hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [ ] **Clicking a button creates a new API fetch request and displays at least three attributes from the returned JSON data**
-- [ ] **Only one item/API call is viewable at a time**
-- [ ] **API calls appear random to the user**
-- [ ] **At least one image is displayed per API call**
-- [ ] **Clicking on a displayed value for one attribute adds it to a displayed ban list**
-- [ ] **Attributes on the ban list prevent further images/API results with that attribute from being displayed**
+- [x] **Clicking a button creates a new API fetch request and displays at least three attributes from the returned JSON data**
+- [x] **Only one item/API call is viewable at a time**
+- [x] **API calls appear random to the user**
+- [x] **At least one image is displayed per API call**
+- [x] **Clicking on a displayed value for one attribute adds it to a displayed ban list**
+- [x] **Attributes on the ban list prevent further images/API results with that attribute from being displayed**
 
 The following **optional** features are implemented:
 
-- [ ] Multiple types of attributes can be added to the ban list
-- [ ] Users can see a stored history of their previously viewed items from their session
+- [x] Multiple types of attributes can be added to the ban list
+- [x] Users can see a stored history of their previously viewed items from their session
 
 The following **additional** features are implemented:
 
@@ -33,7 +33,7 @@ Here's a walkthrough of implemented user stories:
 <img src='https://i.imgur.com/AoZqMGU.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with ScreenToGif
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -41,11 +41,12 @@ GIF created with ...
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Making sure my code isn't attempting to render data from an empty object was 
+a common problem I had to track
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2023] [Landin F. Kasti]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
