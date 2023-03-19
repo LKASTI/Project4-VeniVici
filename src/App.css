@@ -1,11 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Inter&family=Nunito+Sans&family=Roboto&display=swap');
+
+
 *{
     margin: 0px;
+    font-family: 'Roboto', sans-serif;
+    
 }
 
+::-webkit-scrollbar {
+    /* border: 1px solid black; */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(175, 175, 146);
+
+    /* outline: 1px solid slategrey; */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
 #root{
-    background-color:antiquewhite;
     width: 100vw;
     height: 100vh;
+    background-image: url("./assets/background.jpg");
+
 }
 
 .app{
@@ -19,8 +38,31 @@
 }
 
 img{
-    height: 250px;
-    width: 250px;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+h1{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 60px;
+}
+
+h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h3{
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+}
+
+p{
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 .app > *{
@@ -34,17 +76,57 @@ img{
 .known-dogs{
     width: 15%;
     height: 70%;
-    background-color: beige;
+    background-color: rgba(245, 245, 220, 0.774);
     margin-right: auto;
     overflow-y:auto;
-    
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.known-dogs img{
+    height: 150px;
+    width: 150px;
 }
 
 .current-dog{
     width: 40%;
     height: 85%;
-    background-color: beige;
+    background-color: rgba(245, 245, 220, 0.774);
 
+    border-radius: 20px;
+    /* border: black solid 2px; */
+}
+
+button {
+    all: unset;
+    border-radius: 10px;
+
+    font-size: 20px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 13px;
+    padding-right: 13px;
+
+    margin: 10px;
+
+    cursor: pointer;
+}
+
+.dog-attributes button, .banlist button:hover{
+    background-color: rgb(184, 184, 184);
+    filter: drop-shadow(0px 5px 0px rgb(158, 158, 158));
+
+}
+
+.dog-attributes button:hover, .banlist button{
+    background-color: rgb(255, 126, 126);
+    filter: drop-shadow(0px 5px 0px rgb(192, 95, 95));
+}
+
+.banlist button{
+    background-color: rgb(255, 126, 126);
 }
 
 .banlist{
@@ -53,4 +135,19 @@ img{
     background-color: beige;
     margin-left: auto;
 
+}
+
+.current-dog img{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.discover {
+    background-color: rgb(226, 155, 0);
+    filter: drop-shadow(0px 5px 0px rgb(189, 129, 0));
+}
+
+.discover:hover{
+    background-color: rgb(255, 174, 0);
+    filter: drop-shadow(0px 5px 0px rgb(226, 155, 0));
 }

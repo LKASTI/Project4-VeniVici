@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
+import loadingGIF from "./assets/loading.gif"
 
 const DOG_API_URL = "https://api.thedogapi.com/v1/images/search?api_key=" + "live_5gjEN1clL9J8yZlyyahFO5jGpOoOWJEyIBxziCXK42LAZhPTBMWObWOZWaVnddRj"
 
@@ -9,6 +10,7 @@ function App() {
   const [dogObject, setDogObject] = useState(null)
   const [knownDogs, setKnownDogs] = useState([])
   const [banList, setBanList] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     callAPI();
@@ -20,7 +22,7 @@ function App() {
     let response;
     let bool = true;
     console.clear()
-
+    setIsLoading(true)
     do{
       response = await axios.get(DOG_API_URL + "&has_breeds=1")
       bool = ('temperament' in response.data[0].breeds[0])? 
@@ -34,6 +36,7 @@ function App() {
 
     setDogObject(response.data[0])
     setKnownDogs([...knownDogs, {name: `${response.data[0].breeds[0].name}`, url: `${response.data[0].url}`}])
+    setIsLoading(false)
     console.log(response.data[0].breeds[0])
 
     // console.log(response.data[0].breeds[0].bred_for)
@@ -92,13 +95,13 @@ function App() {
         <h3>Discover dogs by clicking the 'Discover' button!</h3>
         {(dogObject != null) && <h2>{dogObject.breeds[0].name}</h2>}
         {(dogObject != null) && 
-          <div className='dog-attributes'>
+        <div className='dog-attributes'>
           <button onClick={addToBanList}>{dogObject.breeds[0].name}</button>
           <button onClick={addToBanList}>{dogObject.breeds[0].life_span}</button>
           <button onClick={addToBanList}>{dogObject.breeds[0].temperament.substring(0, dogObject.breeds[0].temperament.indexOf(","))}</button>
         </div>}
-          <img src={(dogObject != null)? dogObject.url : ""}/>
-        <button onClick={callAPI}>Discover!</button>
+          <img src={(dogObject != null)? (isLoading? `${loadingGIF}`: dogObject.url) : ""}/>
+        <button className='discover' onClick={callAPI}>Discover!</button>
       </div>
       <div className='banlist'>
         <h2>Ban List</h2>
