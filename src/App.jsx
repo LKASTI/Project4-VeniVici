@@ -3,7 +3,7 @@ import axios from 'axios'
 import './App.css'
 import loadingGIF from "./assets/loading.gif"
 
-const DOG_API_URL = "https://api.thedogapi.com/v1/images/search?api_key=" + "live_5gjEN1clL9J8yZlyyahFO5jGpOoOWJEyIBxziCXK42LAZhPTBMWObWOZWaVnddRj"
+const DOG_API_URL = ""
 
 
 function App() {
